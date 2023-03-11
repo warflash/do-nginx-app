@@ -1,0 +1,13 @@
+name: repro
+
+services:
+- name: admin
+  github:
+    repo: warflash/do-nginx-app
+    branch: main
+    deploy_on_push: true
+  source_dir: /
+  build_command: npm run build
+  run_command: npm run start
+  internal_ports:
+  - 3000
